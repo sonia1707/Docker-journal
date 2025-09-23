@@ -44,15 +44,15 @@ Ce repository contient toutes mes notes d'apprentissage sur Docker, des bases au
 #  Docker Cheatsheet - Référence Rapide
 ##  Commandes de Base
 ```bash
-docker --version          # Version Docker
-docker info               # Info système
-docker system df          # Espace utilisé
+docker --version          # Version du Docker
+docker info               # Info sur le système
+docker system df          # Espace utilisé ou occupé
 
 . Gestion des IMAGES:
-docker images            # Lister images locales
-docker pull nginx:latest # Télécharger image
-docker rmi nginx         # Supprimer image
-docker image prune       # Nettoyer images inutilisées
+docker images            # Liste les images locales
+docker pull nginx:latest # Télécharge d'image
+docker rmi nginx         # Supprimer une image
+docker image prune       # Nettoyer les images inutilisées
 
 .Gestion des CONTAINERS:
 # Création
@@ -62,25 +62,25 @@ docker run -it ubuntu /bin/bash
 # Gestion
 docker start/stop/restart web
 docker ps                 # Containers running
-docker ps -a              # Tous containers
+docker ps -a              # Tous les containers
 
 # Inspection
-docker logs web          # Voir logs
+docker logs web          # Voir les logs
 docker stats web         # Statistiques
 docker exec -it web bash # Shell interactif
 
 # Suppression
-docker rm web            # Supprimer
-docker container prune   # Nettoyer arrêtés
+docker rm web            # Supprimer conteneur Docker
+docker container prune   # Nettoye les conteneurs arrêtés
 
 .RÉSEAUX (Networks):
-docker network ls              # Lister réseaux
-docker network create mon-net  # Créer réseau
+docker network ls              # Liste les réseaux
+docker network create mon-net  # Créer un réseau
 docker run --network mon-net nginx
 
 .VOLUMES (Storage):
-docker volume create mon-vol    # Créer volume
-docker volume ls                # Lister volumes
+docker volume create mon-vol    # Créer un volume
+docker volume ls                # Liste les volumes
 docker run -v mon-vol:/data nginx
 
 .DOCKERFILE:
@@ -93,7 +93,7 @@ EXPOSE 3000
 CMD ["npm", "start"]
 
 .Build d'image:
-docker build -t mon-app .          # Construire
+docker build -t mon-app .          # Construit une image Docker personnalisée
 docker build -t mon-app:1.0 .     # Avec tag
 
 .DOCKER COMPOSE:
@@ -108,9 +108,9 @@ services:
       MYSQL_ROOT_PASSWORD: secret
 
 .Commandes Compose:
-docker-compose up -d        # Démarrer services
-docker-compose down         # Arrêter services
-docker-compose ps           # Statut services
+docker-compose up -d        # Démarre les services
+docker-compose down         # Arrête les services
+docker-compose ps           # Statut du service
 
 .Exemples Pratiques:
 1-Serveur web simple:
@@ -127,11 +127,11 @@ docker run -it --name my-ubuntu ubuntu:20.04 /bin/bash
 .Dépannage Rapide:
 1-Problèmes courants:
 # Port déjà utilisé
-docker run -p 8080:80 nginx    # Changer port
+docker run -p 8080:80 nginx    # Changer de port
 # Container ne démarre pas
-docker logs container          # Voir erreurs
+docker logs container          # Voir les erreurs
 # Plus d'espace
-docker system prune -a         # Nettoyage complet
+docker system prune -a         # Nettoyage complet des ressources non utilisées dans Docker
 2-Debugging:
 # Mode interactif pour tester
 docker run -it nginx /bin/bash
