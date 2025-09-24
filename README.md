@@ -55,11 +55,12 @@ docker info               # Info sur le système
 docker system df          # Espace utilisé ou occupé
 ```
 ### Gestion des IMAGES:
+```bash
 docker images            # Liste les images locales
 docker pull nginx:latest # Télécharge d'image
 docker rmi nginx         # Supprimer une image
 docker image prune       # Nettoyer les images inutilisées
-
+```
 
 ### Gestion des CONTAINERS:
 ```bash
