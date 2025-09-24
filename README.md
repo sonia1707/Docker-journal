@@ -125,10 +125,11 @@ services:
 ```
 
 ### Commandes Compose:
+```bash
 docker-compose up -d        # Démarre les services
 docker-compose down         # Arrête les services
 docker-compose ps           # Statut du service
-
+```
 
 ### DOCKER SWARM - Orchestration:
 1-Initialisation du Swarm:
