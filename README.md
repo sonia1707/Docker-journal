@@ -49,13 +49,12 @@ Ce repository contient toutes mes notes d'apprentissage sur Docker, des bases au
 
 #  Docker Cheatsheet - Référence Rapide
 ##  Commandes de Base
-```bash
+
 docker --version          # Version du Docker
 docker info               # Info sur le système
 docker system df          # Espace utilisé ou occupé
 
-
-  <h1>Gestion des IMAGES</h1>
+### Gestion des IMAGES:
 docker images            # Liste les images locales
 docker pull nginx:latest # Télécharge d'image
 docker rmi nginx         # Supprimer une image
@@ -233,6 +232,7 @@ docker service create --name database \
   mysql:8.0
 -Stack complète:
 # docker-stack.yml
+```bash
 version: '3.8'
 services:
   web:
@@ -277,7 +277,7 @@ services:
 networks:
   webnet:
     driver: overlay
-
+```bash
 
 10.Commandes de MAINTENANCE:
 # Mettre à jour un service
