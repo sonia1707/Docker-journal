@@ -190,6 +190,7 @@ services:
         constraints: [node.role == manager]
 ```
 4-Commandes Stack:
+```bash
 # Déployer une stack
 docker stack deploy -c docker-stack.yml myapp
 # Lister les stacks
@@ -198,7 +199,9 @@ docker stack ls
 docker stack services myapp
 # Supprimer une stack
 docker stack rm myapp
+```
 5-Gestion du CLUSTER:
+```bash
 # Afficher les nœuds
 docker node ls
 # Promouvoir un worker en manager
@@ -209,17 +212,23 @@ docker node demote <node-id>
 docker node update --availability drain <node-id>
 # Activer un nœud
 docker node update --availability active <node-id>
+```
 6-RÉSEAUX dans Swarm:
+```bash
 # Créer un réseau overlay
 docker network create -d overlay my-overlay
 # Service sur réseau overlay
 docker service create --name web --network my-overlay nginx
+```
 7-VOLUMES dans Swarm:
+```bash
 # Volume pour service (sur chaque nœud)
 docker service create --name db \
   --mount type=volume,source=db-data,target=/var/lib/mysql \
   mysql:8.0
+```
 8-SÉCURITÉ Swarm:
+```bash
 # Rotation du token
 docker swarm join-token --rotate worker
 # Secrets management
@@ -228,7 +237,9 @@ echo "mon-secret" | docker secret create db_password -
 docker service create --name app \
   --secret db_password \
   nginx
+```
 9-Exemples Swarm Complets:
+```bash
 -Déploiement d'application web:
 # Créer le réseau overlay
 docker network create -d overlay web-network
@@ -291,9 +302,10 @@ services:
 networks:
   webnet:
     driver: overlay
-```bash
+```
 
 10.Commandes de MAINTENANCE:
+```bash
 # Mettre à jour un service
 docker service update --image nginx:latest web
 # Rollback d'un service
@@ -301,16 +313,18 @@ docker service rollback web
 # Pause/resume de service
 docker service update --update-pause web
 docker service update --update-resume web
-
+```
 11.MONITORING Swarm:
+```bash
 # Voir les logs d'un service
 docker service logs web
 # Voir les logs en temps réel
 docker service logs -f web
 # Statistiques des services
 docker stats $(docker service ps web -q)
-
+```
 12.Dépannage SWARM:
+```bash
 # Vérifier l'état du swarm
 docker system info | grep -A 10 Swarm
 # Voir les détails d'une tâche
@@ -319,18 +333,22 @@ docker service ps --no-trunc web
 docker ps --filter name=web
 # Redémarrer les tâches défaillantes
 docker service update --force web
+```
 
 
-
-.Exemples Pratiques:
+### Exemples Pratiques:
 1-Serveur web simple:
+```bash
 docker run -d --name webserver -p 80:80 nginx
 # http://localhost:80
+```
 2-Base de données MySQL:
+```bash
 docker run -d --name mysql-db \
   -e MYSQL_ROOT_PASSWORD=secret \
   -p 3306:3306 \
   mysql:8.0
+```
 3-Container interactif:
 docker run -it --name my-ubuntu ubuntu:20.04 /bin/bash
 
