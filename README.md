@@ -106,11 +106,13 @@ CMD ["npm", "start"]
 ```
 
 ### Build d'image:
+```bash
 docker build -t mon-app .          # Construit une image Docker personnalisée
 docker build -t mon-app:1.0 .     # Avec tag
+```
 
-
-.DOCKER COMPOSE:
+### DOCKER COMPOSE:
+```bash
 version: '3.8'
 services:
   web:
@@ -120,15 +122,15 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: secret
+```
 
-
-.Commandes Compose:
+### Commandes Compose:
 docker-compose up -d        # Démarre les services
 docker-compose down         # Arrête les services
 docker-compose ps           # Statut du service
 
 
-.DOCKER SWARM - Orchestration:
+### DOCKER SWARM - Orchestration:
 1-Initialisation du Swarm:
 # Initialiser le swarm (manager)
 docker swarm init
