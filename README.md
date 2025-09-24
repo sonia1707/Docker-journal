@@ -142,6 +142,7 @@ docker swarm join --token <token> <manager-ip>:2377
 docker node ls
 # Inspecter un noeud
 docker node inspect <node-id>
+```
 2-Gestion des SERVICES:
 ```bash
 # Créer un service
@@ -160,7 +161,9 @@ docker service update --replicas 5 web
 docker service scale web=10
 # Supprimer un service
 docker service rm web
+```
 3-STACKS (Docker Compose dans Swarm):
+```bash
 # docker-stack.yml
 version: '3.8'
 services:
@@ -185,6 +188,7 @@ services:
       replicas: 1
       placement:
         constraints: [node.role == manager]
+```
 4-Commandes Stack:
 # Déployer une stack
 docker stack deploy -c docker-stack.yml myapp
