@@ -85,15 +85,17 @@ docker container prune   # Nettoye les conteneurs arrêtés
 docker network ls              # Liste les réseaux
 docker network create mon-net  # Créer un réseau
 docker run --network mon-net nginx
+```
 
-
-.VOLUMES (Storage):
+### VOLUMES (Storage):
+```bash
 docker volume create mon-vol    # Créer un volume
 docker volume ls                # Liste les volumes
 docker run -v mon-vol:/data nginx
+```
 
-
-.DOCKERFILE:
+### DOCKERFILE:
+```bash
 FROM node:14-alpine
 WORKDIR /app
 COPY package*.json ./
@@ -101,9 +103,9 @@ RUN npm install
 COPY . .
 EXPOSE 3000
 CMD ["npm", "start"]
+```
 
-
-.Build d'image:
+### Build d'image:
 docker build -t mon-app .          # Construit une image Docker personnalisée
 docker build -t mon-app:1.0 .     # Avec tag
 
