@@ -55,7 +55,7 @@ docker info               # Info sur le système
 docker system df          # Espace utilisé ou occupé
 
 
-  <h1>Gestion des IMAGES </h1>:
+  <h1>Gestion des IMAGES</h1>
 docker images            # Liste les images locales
 docker pull nginx:latest # Télécharge d'image
 docker rmi nginx         # Supprimer une image
