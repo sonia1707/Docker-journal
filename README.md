@@ -133,6 +133,7 @@ docker-compose ps           # Statut du service
 
 ### DOCKER SWARM - Orchestration:
 1-Initialisation du Swarm:
+```bash
 # Initialiser le swarm (manager)
 docker swarm init
 # Rejoindre un swarm (worker)
@@ -142,6 +143,7 @@ docker node ls
 # Inspecter un noeud
 docker node inspect <node-id>
 2-Gestion des SERVICES:
+```bash
 # Créer un service
 docker service create --name web -p 80:80 nginx
 # Service avec réplicas
