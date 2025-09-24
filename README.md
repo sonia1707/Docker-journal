@@ -49,11 +49,11 @@ Ce repository contient toutes mes notes d'apprentissage sur Docker, des bases au
 
 #  Docker Cheatsheet - Référence Rapide
 ##  Commandes de Base
-
+```bash
 docker --version          # Version du Docker
 docker info               # Info sur le système
 docker system df          # Espace utilisé ou occupé
-
+```
 ### Gestion des IMAGES:
 docker images            # Liste les images locales
 docker pull nginx:latest # Télécharge d'image
@@ -61,7 +61,8 @@ docker rmi nginx         # Supprimer une image
 docker image prune       # Nettoyer les images inutilisées
 
 
-.Gestion des CONTAINERS:
+### Gestion des CONTAINERS:
+```bash
 # Création:
 docker run -d --name web -p 8080:80 nginx
 docker run -it ubuntu /bin/bash
@@ -76,9 +77,10 @@ docker exec -it web bash # Shell interactif
 # Suppression:
 docker rm web            # Supprimer conteneur Docker
 docker container prune   # Nettoye les conteneurs arrêtés
+```
 
-
-.RÉSEAUX (Networks):
+### RÉSEAUX (Networks):
+```bash
 docker network ls              # Liste les réseaux
 docker network create mon-net  # Créer un réseau
 docker run --network mon-net nginx
