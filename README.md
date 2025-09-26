@@ -530,7 +530,71 @@ Nettoyage:
 ```bash
 docker system prune -a # Supprime tout ce qui est inutile et à utiliser avec précaution
 ```
+### Exemple de Déploiement Node.js+MongoDB
+📁Structure du projet:
+```bash
+docker-journal/
+├── app/
+│   ├── server.js
+│   └── package.json
+├── Dockerfile
+├── docker-compose.yml
+└── .env
+```
+🐳Dockerfile:
+```bash
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["node", "server.js"]
+```
+⚙️docker-compose.yml:
+```bash
+version: '3.8'
+services:
+  web:
+    build: ./app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    networks:
+      - app-net
+  mongo:
+    image: mongo:6.0
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-net
+volumes:
+  mongo-data:
+networks:
+  app-net:
 
+```
+🔐.env:
+```bash
+PORT=3000
+MONGO_URL=mongodb://mongo:27017/mydb
+```
+🚀Déploiement:
+```bash
+# Build et lancement
+docker-compose up --build -d
+# Vérifier les services
+docker-compose ps
+# Accéder à l'app
+http://localhost:3000
+```
+🧹Nettoyage:
+```bash
+docker-compose down -v # Arrêt complet et suppression des volumes
+```
 ### Resources utiles
 -Documentation officielle : https://docs.docker.com/
 -Docker Hub : https://hub.docker.com/
