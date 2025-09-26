@@ -499,9 +499,11 @@ docker logs --tail 50 -f mon-container
 docker inspect mon-container
 ```
 ### Déploiement avec Docker
-```bash
 Prérequis
-
+```bash
+Docker installé sur votre machine
+(Optionnel) Docker Compose pour les environnements multi-services
+```
 ### Resources utiles
 -Documentation officielle : https://docs.docker.com/
 -Docker Hub : https://hub.docker.com/
