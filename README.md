@@ -499,11 +499,38 @@ docker logs --tail 50 -f mon-container
 docker inspect mon-container
 ```
 ### Déploiement avec Docker
-Prérequis
+Prérequis:
 ```bash
 Docker installé sur votre machine
-(Optionnel) Docker Compose pour les environnements multi-services
+Docker Compose pour les environnements multi-services(Optionnel)
 ```
+Construction de l’image:
+```bash
+docker build -t nom-de-votre-app . # Crée une image Docker à partir du Dockerfile situé à la racine du projet.
+```
+Lancement du conteneur:
+```bash
+docker run -p 3000:3000 nom-de-votre-app # L’application sera accessible sur http://localhost:3000
+```
+Utilisation de Docker Compose:
+```bash
+docker-compose up --build # Lance tous les services si vous avez un fichier docker-compose.yml
+```
+Pour arrêter les conteneurs:
+```bash
+docker-compose down
+```
+Variables d’environnement:
+```bash
+# Crée un fichier .env à la racine du projet pour définir les variables qui seront automatiquement chargées par Docker Compose
+PORT=3000
+DB_PASSWORD=secret
+```
+Nettoyage:
+```bash
+docker system prune -a # Supprime tout ce qui est inutile et à utiliser avec précaution
+```
+
 ### Resources utiles
 -Documentation officielle : https://docs.docker.com/
 -Docker Hub : https://hub.docker.com/
