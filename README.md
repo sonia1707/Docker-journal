@@ -455,6 +455,8 @@ services:
       POSTGRES_PASSWORD: secret
 ```
 
+
+
 ### Best Practices:
 1-Sécurités:
 ```bash
@@ -496,6 +498,9 @@ docker logs --tail 50 -f mon-container
 # Inspection complète
 docker inspect mon-container
 ```
+### Déploiement avec Docker
+```bash
+Prérequis
 
 ### Resources utiles
 -Documentation officielle : https://docs.docker.com/
