@@ -1,14 +1,9 @@
 # Docker Journal
 Apprentissage de Docker
-
 # Mon Apprentissage Docker Complet
-
 ## Ce que j'apprends sur Docker
-
 Ce repository contient toutes mes notes d'apprentissage sur Docker, des bases aux concepts avancés.
-
 ##  Mes notes par séance
-
 ### 1- Les bases
 - Architecture Docker et concepts des containers
 - Commandes de base Docker
@@ -44,7 +39,6 @@ Ce repository contient toutes mes notes d'apprentissage sur Docker, des bases au
 - Sécurité des containers
 - Optimisation des images
 - Monitoring et logging
-
 ---
 
 #  Docker Cheatsheet - Référence Rapide
@@ -61,7 +55,6 @@ docker pull nginx:latest # Télécharge d'image
 docker rmi nginx         # Supprimer une image
 docker image prune       # Nettoyer les images inutilisées
 ```
-
 ### Gestion des CONTAINERS:
 ```bash
 # Création:
@@ -79,21 +72,18 @@ docker exec -it web bash # Shell interactif
 docker rm web            # Supprimer conteneur Docker
 docker container prune   # Nettoye les conteneurs arrêtés
 ```
-
 ### RÉSEAUX (Networks):
 ```bash
 docker network ls              # Liste les réseaux
 docker network create mon-net  # Créer un réseau
 docker run --network mon-net nginx
 ```
-
 ### VOLUMES (Storage):
 ```bash
 docker volume create mon-vol    # Créer un volume
 docker volume ls                # Liste les volumes
 docker run -v mon-vol:/data nginx
 ```
-
 ### DOCKERFILE:
 ```bash
 FROM node:14-alpine
@@ -104,13 +94,11 @@ COPY . .
 EXPOSE 3000
 CMD ["npm", "start"]
 ```
-
 ### Build d'image:
 ```bash
 docker build -t mon-app .          # Construit une image Docker personnalisée
 docker build -t mon-app:1.0 .     # Avec tag
 ```
-
 ### DOCKER COMPOSE:
 ```bash
 version: '3.8'
@@ -123,14 +111,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: secret
 ```
-
 ### Commandes Compose:
 ```bash
 docker-compose up -d        # Démarre les services
 docker-compose down         # Arrête les services
 docker-compose ps           # Statut du service
 ```
-
 ### DOCKER SWARM - Orchestration:
 1-Initialisation du Swarm:
 ```bash
@@ -303,7 +289,6 @@ networks:
   webnet:
     driver: overlay
 ```
-
 10.Commandes de MAINTENANCE:
 ```bash
 # Mettre à jour un service
@@ -334,8 +319,6 @@ docker ps --filter name=web
 # Redémarrer les tâches défaillantes
 docker service update --force web
 ```
-
-
 ### Exemples Pratiques:
 1-Serveur web simple:
 ```bash
@@ -353,7 +336,6 @@ docker run -d --name mysql-db \
 ```bash
 docker run -it --name my-ubuntu ubuntu:20.04 /bin/bash
 ```
-
 ### Dépannage Rapide:
 1-Problèmes courants:
 ```bash
@@ -371,7 +353,6 @@ docker run -it nginx /bin/bash
 # Inspection complète
 docker inspect container
 ```
-
 ### Commandes Avancées:
 1-Optimisation:
 ```bash
@@ -389,7 +370,6 @@ docker login                  # Connexion
 docker tag app user/app       # Tagger
 docker push user/app          # Publier
 ```
-
 ### Nettoyage:
 ```bash
 # Nettoyage complet:
@@ -399,7 +379,6 @@ docker container prune    # Containers arrêtés
 docker image prune        # Images non utilisées
 docker volume prune       # Volumes non utilisés
 ```
-
 ### Checklist Démarrage Rapide:
 1-Vérifier installation:
 ```bash
@@ -421,7 +400,6 @@ docker ps
 ```bash
 http://localhost:80
 ```
-
 ### Application web + base de données:
 1-# Lancer MySQL:
 ```bash
@@ -438,7 +416,6 @@ docker run -d --name app \
   -p 8080:80 \
   mon-app
 ```
-
 ### Docker Compose multi-services:
 ```bash
 version: '3.8'
@@ -454,9 +431,6 @@ services:
     environment:
       POSTGRES_PASSWORD: secret
 ```
-
-
-
 ### Best Practices:
 1-Sécurités:
 ```bash
@@ -476,7 +450,6 @@ services:
 -Logs rotation
 -Monitoring des ressources
 ```
-
 ### Dépannage Common:
 1-Problèmes de ports:
 ```bash
