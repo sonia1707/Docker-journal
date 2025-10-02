@@ -574,4 +574,4 @@ docker-compose down -v # Arrêt complet et suppression des volumes
 -Play with Docker : https://labs.play-with-docker.com/
 
 ### Conclusion:
-J'espère que mon dépôt vous permettra de plonger le monde fascinant du Docker et vous à motivez à explorer l'univers Docker! 
+J'espère que mon dépôt vous permettra de plonger le monde fascinant du Docker et vous motive à explorer l'univers Docker! 
