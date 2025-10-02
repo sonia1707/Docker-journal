@@ -1,8 +1,8 @@
 # Docker Journal
 Apprentissage de Docker
 # Mon Apprentissage Docker Complet
-## Ce que j'apprends sur Docker
-Ce repository contient toutes mes notes d'apprentissage sur Docker,mes testes, et mes réflexions au fil des séances.
+## Ce que j'ai appris sur Docker
+Ce repository contient toutes mes notes de l'apprentissage sur Docker,mes testes au fil des séances.
 ##  Mes notes par séance
 ### 1- Les bases
 - Architecture Docker et concepts des containers
@@ -17,7 +17,7 @@ Ce repository contient toutes mes notes d'apprentissage sur Docker,mes testes, e
 - Containers interactifs
 
 ### 3 - Dockerfile
-- Création d'images personnalisées
+- Création des images personnalisées
 - Instructions Dockerfile (FROM, RUN, COPY, CMD)
 - Build d'images
 - Multi-stage builds
@@ -495,7 +495,7 @@ docker-compose down
 ```
 Variables d’environnement:
 ```bash
-# Crée un fichier .env à la racine du projet pour définir les variables qui seront automatiquement chargées par Docker Compose
+# Créer un fichier .env à la racine du projet pour définir les variables qui seront automatiquement chargées par Docker Compose
 PORT=3000
 DB_PASSWORD=secret
 ```
@@ -503,7 +503,7 @@ Nettoyage:
 ```bash
 docker system prune -a # Supprime tout ce qui est inutile et à utiliser avec précaution
 ```
-### Exemple de Déploiement Node.js+MongoDB
+### Exemple de Déploiement : Node.js+MongoDB
 📁Structure du projet:
 ```bash
 docker-journal/
@@ -573,5 +573,5 @@ docker-compose down -v # Arrêt complet et suppression des volumes
 -Docker Hub : https://hub.docker.com/
 -Play with Docker : https://labs.play-with-docker.com/
 
-### Conclusion:
-J'espère que mon dépôt vous permettra de plonger le monde fascinant du Docker et vous motive à explorer l'univers Docker! 
+### Remerciement:
+J'éspère que mon dépôt vous a permis de découvrir le monde du Docker et qu'il vous a motivez à continuer d'explorer cette univers fascinant du Docker
