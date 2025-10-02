@@ -2,7 +2,7 @@
 Apprentissage de Docker
 # Mon Apprentissage Docker Complet
 ## Ce que j'apprends sur Docker
-Ce repository contient toutes mes notes d'apprentissage sur Docker, des bases aux concepts avancés.
+Ce repository contient toutes mes notes d'apprentissage sur Docker,mes testes, et mes réflexions au fil des séances.
 ##  Mes notes par séance
 ### 1- Les bases
 - Architecture Docker et concepts des containers
@@ -573,3 +573,5 @@ docker-compose down -v # Arrêt complet et suppression des volumes
 -Docker Hub : https://hub.docker.com/
 -Play with Docker : https://labs.play-with-docker.com/
 
+### Conclusion:
+J'espère que mon dépôt vous permettra de plonger le monde fascinant du Docker et vous à motivez à explorer l'univers Docker! 
